@@ -27,16 +27,28 @@ function Home () {
 
 return (
         <>
-        <Link to='/play'>
-        <Button text='Single Player'></Button>
-        </Link>
-        <br />
-        <Link to='/start'>
-        <div className="mt-4">
-        <Button text='Multi Player' styleType="secondary"></Button>
+        <div className="h-screen flex flex-col justify-between text-center">
+            {/* Main Content */}
+            <div className="flex flex-col items-center justify-center flex-grow">
+                <h1 className="text-3xl font-bold text-white bg-blue-500 rounded-3xl px-12 py-2 w-full max-w-md mb-9">
+                    HangmanMaster
+                </h1>
+                <p className="text-5xl font-bold text-black mb-3">Welcome to the Hangman!</p>
+                <p className="mb-6 text-lg">Start a fun and challenging game of Hangman</p>
+
+                <div className="flex space-x-4">
+                    <Link to="/play" className="mb-4">
+                        <Button text="Single Player" size="md" styleType="primary" />
+                    </Link>
+                    <Link to="/start">
+                        <Button text="Multi Player" size="md" styleType="secondary" />
+                    </Link>
+                </div>
+            </div>
+
+            {/* Footer */}
+            <div className="pb-2">Made with ❤️ by Hemant Kushwaha</div>
         </div>
-        </Link>
-        
 
         </>
 
