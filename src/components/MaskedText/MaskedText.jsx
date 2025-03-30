@@ -7,7 +7,7 @@ function MaskedText ({text,guessedLetters}) {
       <>
         {maskedString.map((letter,idx) => {
             return (
-            <span key={idx} className="mx-2 text-4xl" >
+            <span key={idx} className="mx-2 text-3xl" >
                 {letter}
             </span>
             )

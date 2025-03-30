@@ -12,7 +12,7 @@ function HangMan ({step}) {
 
     return (
         
-        <div className='w-[500px]'>
+        <div className='w-[350px]'>
             <img 
             src={step >= images.length? images[images.length-1] : images[step]}
              />

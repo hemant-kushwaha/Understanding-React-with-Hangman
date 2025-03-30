@@ -15,7 +15,7 @@ function TextInputFormContainer () {
         e.preventDefault();
         console.log("Form Submitted",value);
 
-        if(value.trim() ) {
+        if(value.trim() && userHint.trim() ) {
             // navigate(`/play?text=${value}&author=hemant`);//Passing path params
             // navigate(`/play/${value}/2`);//Passing path params
             // navigate('/play',{ state:{ wordSelected:value } });

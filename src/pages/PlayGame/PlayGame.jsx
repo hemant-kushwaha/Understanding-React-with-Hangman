@@ -21,7 +21,15 @@ function PlayGame ({wordSelected,guessedLetters,step,onLetterClick,onRestart,hin
 
     return (
         <>
-        
+        {/* Navbar with buttons */}
+      <nav className="flex justify-between items-center bg-gray-100 p-4">
+        <Link to="/" className="text-black text-lg font-bold">Home</Link>
+        <div className="flex space-x-4">
+          <Link to="/start" className="text-black text-lg font-bold">Start Game</Link>
+          <button onClick={onRestart} className="font-bold text-lg">Restart</button> 
+        </div>
+      </nav>
+
         <div className="flex flex-col items-center min-h-screen bg-gray-100 p-6">
             {/* Guess the Word Card */}
             <div className="bg-white shadow-lg rounded-xl p-2 w-full max-w-xl text-center mb-4">
@@ -31,22 +39,17 @@ function PlayGame ({wordSelected,guessedLetters,step,onLetterClick,onRestart,hin
             </div>
 
              {/* Letter Buttons (Keyboard Layout) */}
-             <div className="rounded-xl  w-full max-w-4xl mb-7 text-center">
+             <div className="rounded-xl  w-full max-w-4xl mb-5 text-center">
                 <LetterButtons text={wordSelected} guessedLetters={guessedLetters} onletterClick={onLetterClick} />
             </div>
             
              {/* Hangman Card */}
-             <div className=" bg-white shadow-lg rounded-xl p-4 w-full max-w-xl text-right">
+             <div className=" bg-white shadow-lg rounded-lg p-4 w-full max-w-lg text-right">
                 <span className="text-red-500 font-bold">Chances Left: {6 - step}</span>
                 <HangMan step={step} />
-            </div>
+            </div>      
             
-            
-            
-             
-            
-            
-             </div>
+         </div>
 
          {/*<h1>Play Game  </h1>
 
