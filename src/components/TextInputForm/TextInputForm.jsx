@@ -23,13 +23,13 @@ function TextInputForm ({inputType,handleFormSubmit,handleTextInputChange,handle
                 />
             </div>
 
-             <div>
+             {/* <div>
                 <Button 
                     styleType="warning"
                     text={inputType == "password" ? "Show" : "Hide"}
                     onClickHandler = {handleButtonShowHideClick}
                 />
-            </div>
+            </div> */}
                 <Button 
                     type="submit"
                     styleType="primary"
