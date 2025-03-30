@@ -25,7 +25,7 @@ function PlayGameContainer(){
 
     // Set word and hint based on multiplayer or single-player
     const wordSelected = state?.wordSelected || word || "";
-    const finalhint = state?.userHint ||hint || "No hint available";
+    const finalhint = state?.userHint || "☠️" || hint;
 
     
     function handleLetterClick (letter){

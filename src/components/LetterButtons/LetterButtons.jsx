@@ -10,7 +10,7 @@ function LetterButtons ({text,guessedLetters,onletterClick }) {
         if(guessedLettersSet.has(letter)){
             return `${originalLetters.has(letter) ? 'bg-green-500':'bg-red-500'}`;
         } else {
-            return 'bg-orange-500';
+            return 'bg-gray-500';
         }
     }
 
@@ -27,7 +27,7 @@ function LetterButtons ({text,guessedLetters,onletterClick }) {
                 value={letter}
                 onClick={handleLetterClick}
                 disabled={guessedLettersSet.has(letter)}
-                className={`h-12 w-12 m-1 text-white rounded-md ${buttonStyle(letter)}`}
+                className={`h-10 w-10 m-1 text-white rounded-md ${buttonStyle(letter)}`}
             >
                 {letter}
             </button>
@@ -37,7 +37,7 @@ function LetterButtons ({text,guessedLetters,onletterClick }) {
 
     return (
         <>
-        <div className="w-[23rem] h-[12rem]">
+        <div className="w-full">
          {buttons}
          </div>
 
