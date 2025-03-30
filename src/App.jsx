@@ -10,10 +10,11 @@ import { useState } from 'react';
 function App() {
 const [wordList,setWordList] = useState([]);
 const [word,setWord] = useState('');
+const [hint,setHint] = useState('');
 
 
   return (
- <WordContext.Provider value={{wordList,setWordList,word,setWord}}>
+ <WordContext.Provider value={{word,setWord,hint,setHint}}>
    <Routes>
     <Route path='/start' element={<StartGame />} />
     <Route path='/play' element ={<PlayGameContainer />} />

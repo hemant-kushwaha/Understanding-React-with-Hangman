@@ -7,7 +7,7 @@ import useWordStore from "../Stores/WordStore";
 function Home () {
     // const [word,setWord] = useState('');
     //Context Api
-    const {setWord} = useContext(WordContext);//Using Context API
+    const {setWord,setHint} = useContext(WordContext);//Using Context API
     const {setWordList} =useWordStore();//Using zustand-> coming from store
 
     async function fetchWords() {
@@ -19,6 +19,7 @@ function Home () {
         console.log(randomIndex);
         console.log(data[randomIndex])
         setWord(data[randomIndex].wordValue);
+        setHint(data[randomIndex].wordHint);
     }
 
     useEffect(()=>{

@@ -6,7 +6,7 @@ function TextInputFormContainer () {
 
  const [inputType,setInputType] = useState("password");
  const [value,setValue] = useState("");
- const [hint,setHint] = useState("");
+ const [userHint,setUserHint] = useState("");
 
  const navigate=  useNavigate();
 
@@ -19,7 +19,7 @@ function TextInputFormContainer () {
             // navigate(`/play?text=${value}&author=hemant`);//Passing path params
             // navigate(`/play/${value}/2`);//Passing path params
             // navigate('/play',{ state:{ wordSelected:value } });
-            navigate("/play", { state: { wordSelected: value , hint:hint } });
+            navigate("/play", { state: { wordSelected: value , userHint:userHint } });
 
             
 
@@ -33,7 +33,7 @@ function TextInputFormContainer () {
     }
 
     function handleHintInputChange (event){
-        setHint(event.target.value);
+        setUserHint(event.target.value);
     }
 
     function handleButtonShowHideClick (event) {

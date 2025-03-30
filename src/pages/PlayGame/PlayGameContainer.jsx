@@ -15,7 +15,7 @@ function PlayGameContainer(){
 
 
 
-    const {word,setWord} = useContext(WordContext);
+    const {word,setWord,hint,setHint} = useContext(WordContext);
     const {wordList} = useWordStore();
     
     
@@ -25,7 +25,7 @@ function PlayGameContainer(){
 
     // Set word and hint based on multiplayer or single-player
     const wordSelected = state?.wordSelected || word || "";
-    const hint = state?.hint || "No hint available";
+    const finalhint = state?.userHint ||hint || "No hint available";
 
     
     function handleLetterClick (letter){
@@ -42,6 +42,7 @@ function PlayGameContainer(){
         if (wordList.length > 0) {
             const randomIndex = Math.floor(Math.random() * wordList.length);
             setWord(wordList[randomIndex].wordValue); // Pick a new word
+            setHint(wordList[randomIndex].wordHint);
             console.log(wordList[randomIndex].wordValue);
         }
         setGuessedletters([]); // Reset guessed letters
@@ -55,7 +56,7 @@ function PlayGameContainer(){
         step={step}
         onLetterClick={handleLetterClick}
         onRestart={onRestart}
-        hint={hint}
+        hint={finalhint}
         />
     );
 
