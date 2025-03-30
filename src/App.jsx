@@ -11,6 +11,7 @@ function App() {
 const [wordList,setWordList] = useState([]);
 const [word,setWord] = useState('');
 
+
   return (
  <WordContext.Provider value={{wordList,setWordList,word,setWord}}>
    <Routes>

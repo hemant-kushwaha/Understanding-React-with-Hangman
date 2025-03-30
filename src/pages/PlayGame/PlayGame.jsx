@@ -6,7 +6,7 @@ import Button from "../../components/button/button";
 import { useContext } from "react";
 import { WordContext } from "../../Context/WordContext";
 
-function PlayGame ({wordSelected,guessedLetters,step,onLetterClick,onRestart}) {
+function PlayGame ({wordSelected,guessedLetters,step,onLetterClick,onRestart,hint}) {
     /*Receiving part of Query path params
      const [searchParams] = useSearchParams(); --> Hook given by react router dom
      SearchParams.get("text"); */
@@ -26,6 +26,7 @@ function PlayGame ({wordSelected,guessedLetters,step,onLetterClick,onRestart}) {
         {/* {wordList.map(wordObject => <li key={wordObject.id}>{wordObject.wordValue}</li>)} */}
 
         <MaskedText text={wordSelected} guessedLetters={guessedLetters}/>
+        {hint} 
 
         <div className=" my-[1rem]">
         <div className="flex">

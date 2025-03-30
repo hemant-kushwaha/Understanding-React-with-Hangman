@@ -1,6 +1,7 @@
 import PlayGame from "./PlayGame";
 import { useState } from "react";
 import { useContext } from "react";
+import { useLocation } from "react-router-dom";
 import { WordContext } from "../../Context/WordContext";
 import useWordStore from "../../Stores/WordStore";
 
@@ -8,6 +9,12 @@ import useWordStore from "../../Stores/WordStore";
 
 
 function PlayGameContainer(){
+
+    const location = useLocation();
+    const { state } = location;
+
+
+
     const {word,setWord} = useContext(WordContext);
     const {wordList} = useWordStore();
     
@@ -15,7 +22,10 @@ function PlayGameContainer(){
     const [guessedLetters,setGuessedletters] = useState([]);
 
     const [step,setStep] = useState(0);
-    const wordSelected = word || "";//if word is falsy value it returns then ""
+
+    // Set word and hint based on multiplayer or single-player
+    const wordSelected = state?.wordSelected || word || "";
+    const hint = state?.hint || "No hint available";
 
     
     function handleLetterClick (letter){
@@ -45,6 +55,7 @@ function PlayGameContainer(){
         step={step}
         onLetterClick={handleLetterClick}
         onRestart={onRestart}
+        hint={hint}
         />
     );
 
