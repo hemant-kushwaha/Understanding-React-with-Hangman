@@ -1,5 +1,5 @@
 import PlayGame from "./PlayGame";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { useContext } from "react";
 import { useLocation } from "react-router-dom";
 import { WordContext } from "../../Context/WordContext";
@@ -20,14 +20,40 @@ function PlayGameContainer(){
     
     
     const [guessedLetters,setGuessedletters] = useState([]);
-
     const [step,setStep] = useState(0);
+
+    const [isGameOver, setIsGameOver] = useState(false);
+    const [isWinner, setIsWinner] = useState(false);
 
     // Set word and hint based on multiplayer or single-player
     const wordSelected = state?.wordSelected || word || "";
     const finalhint = state?.userHint || hint;
 
-    
+     // Check if the player has won or lost
+        useEffect(() => {
+            if (wordSelected) {
+                let allLettersGuessed = true;
+                    for (let letter of wordSelected) {
+                        if (!guessedLetters.includes(letter.toUpperCase())) {
+                            allLettersGuessed = false;
+                            break;
+                        }
+                    }
+
+                if (allLettersGuessed) {
+                    setIsWinner(true);
+                    setIsGameOver(true);
+                }
+                if (step >= 6) {
+                    setIsGameOver(true);
+                }
+            }
+        }, [guessedLetters, step, wordSelected]);    
+
+
+
+
+
     function handleLetterClick (letter){
         if(wordSelected.toUpperCase().includes(letter)){
             console.log("Correct")
@@ -38,25 +64,31 @@ function PlayGameContainer(){
         setGuessedletters([...guessedLetters,letter]);
     }  
 
-    function onRestart (){
+    function handleRestart() {
+        setIsGameOver(false);
+        setIsWinner(false);
+        setGuessedletters([]);
+        setStep(0);
+
         if (wordList.length > 0) {
             const randomIndex = Math.floor(Math.random() * wordList.length);
-            setWord(wordList[randomIndex].wordValue); // Pick a new word
+            setWord(wordList[randomIndex].wordValue);
             setHint(wordList[randomIndex].wordHint);
             console.log(wordList[randomIndex].wordValue);
         }
-        setGuessedletters([]); // Reset guessed letters
-        setStep(0); // Reset the step count
     }
 
+    
     return (
         <PlayGame      
         wordSelected={wordSelected}
         guessedLetters={guessedLetters}
         step={step}
         onLetterClick={handleLetterClick}
-        onRestart={onRestart}
+        onRestart={handleRestart}
         hint={finalhint}
+        isGameOver={isGameOver}
+        isWinner={isWinner}
         />
     );
 
