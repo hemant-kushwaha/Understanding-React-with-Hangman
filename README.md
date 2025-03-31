@@ -42,7 +42,7 @@ npm run dev
 If using the JSON server for single-player mode, start it with:
 
 ```sh
-npx json-server --watch data.json --port 5000
+npx json-server --db.json--
 ```
 
 ## Usage
