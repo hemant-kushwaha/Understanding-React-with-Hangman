@@ -29,7 +29,6 @@ function Home () {
 return (
         <>
         <div className="h-screen flex flex-col justify-between text-center">
-            {/* Main Content */}
             <div className="flex flex-col items-center justify-center flex-grow">
                 <h1 className="text-3xl font-bold text-white bg-blue-500 rounded-3xl px-12 py-2 w-full max-w-md mb-9">
                     HangmanMaster
@@ -46,8 +45,6 @@ return (
                     </Link>
                 </div>
             </div>
-
-            {/* Footer */}
             <div className="pb-2">Made with ❤️ by Hemant Kushwaha</div>
         </div>
 

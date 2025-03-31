@@ -6,14 +6,10 @@ import { WordContext } from "../../Context/WordContext";
 import useWordStore from "../../Stores/WordStore";
 
 
-
-
 function PlayGameContainer(){
 
     const location = useLocation();
     const { state } = location;
-
-
 
     const {word,setWord,hint,setHint} = useContext(WordContext);
     const {wordList} = useWordStore();
@@ -49,10 +45,6 @@ function PlayGameContainer(){
                 }
             }
         }, [guessedLetters, step, wordSelected]);    
-
-
-
-
 
     function handleLetterClick (letter){
         if(wordSelected.toUpperCase().includes(letter)){
