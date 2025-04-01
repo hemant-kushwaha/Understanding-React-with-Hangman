@@ -26,8 +26,8 @@ This is a fully functional Hangman game built using React and Vite. It features 
 Clone the repository and install dependencies:
 
 ```sh
-git clone https://github.com/yourusername/hangman-game.git
-cd hangman-game
+git clone https://github.com/hemant-kushwaha/Understanding-React-with-Hangman.git
+cd Understanding-React-with-Hangman
 npm install
 ```
 
