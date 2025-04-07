@@ -20,6 +20,10 @@ This is a fully functional Hangman game built using React and Vite. It features 
   - `navigator`
 - **Styling**: Tailwind CSS is used for a clean UI.
 - **Backend**: A simple JSON server provides words and hints for single-player mode.
+- ### **Design Pattern: Presenter-Container**  
+- **Implemented the Presenter-Container design pattern** to separate UI logic from business logic, making the codebase more modular and maintainable.  
+- **Container components** handle data fetching, state management, and business logic.  
+- **Presenter components** focus on rendering UI elements.  
 
 ## Installation
 
