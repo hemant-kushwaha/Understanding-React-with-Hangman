@@ -11,7 +11,7 @@ function Home () {
     const {setWordList} =useWordStore();//Using zustand-> coming from store
 
     async function fetchWords() {
-        const response = await fetch('https://understanding-react-with-hangman-backend.onrender.com');
+        const response = await fetch('https://understanding-react-with-hangman.onrender.com');
         const data = await response.json();
         console.log(data);
         setWordList([...data]);
