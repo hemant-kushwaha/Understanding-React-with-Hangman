@@ -46,7 +46,9 @@ function PlayGame ({wordSelected,guessedLetters,step,onLetterClick,onRestart,hin
                             {isWinner ? "🎉 You Won!" : "💀 Game Over!"}
                         </h2>
                         <div className="flex justify-center space-x-6">
-                              <Button text="Singleplayer Mode" onClickHandler={onRestart} size="md" />
+                            <Link to="/">
+                              <Button text="Singleplayer Mode" size="md" />
+                            </Link>
                             <Link to="/start">
                             <Button text="Multiplayer Mode" size="md" styleType="success"/>                               
                             </Link>

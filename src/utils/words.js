@@ -1,5 +1,4 @@
-{
-    "words": [
+export  const words = [
         { "wordValue": "MANGO", "wordHint": "A fruit" },
         { "wordValue": "APPLE", "wordHint": "A fruit" },
         { "wordValue": "BANANA", "wordHint": "A fruit" },
@@ -82,4 +81,4 @@
         { "wordValue": "LOVE", "wordHint": "A deep emotion" },
         { "wordValue": "SMILE", "wordHint": "Happens when you are happy" }
     ]
-}
+
