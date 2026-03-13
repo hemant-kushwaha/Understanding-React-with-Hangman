@@ -2,30 +2,50 @@
 
 This is a fully functional Hangman game built using React and Vite. It features both single-player and multiplayer modes, along with a well-structured UI built using Tailwind CSS.
 
+🔗 **Live Demo:** https://hangman-game-1l64.onrender.com/
+
+
 ## Features
 
 - **Home Page**: Navigate between game modes.
-- **Single Player Mode**: The game automatically provides a word and hint fetched from a JSON server.
+- **Single Player Mode**: The game provides a word and hint from hardcoded data inside the project.
 - **Multiplayer Mode**: One player inputs a secret word and hint for the other to guess.
-- **Game Play**:
-  - Players guess letters to reveal the hidden word.
-  - Win/Lose alerts appear when the game ends.
-- **React Features Used**:
-  - `useState`
-  - `useEffect`
-  - `useContext`
-  - `useLocation`
-  - `zustand`
-  - `react-router-dom`
-  - `navigator`
-- **Styling**: Tailwind CSS is used for a clean UI.
-- **Backend**: A simple JSON server provides words and hints for single-player mode.
-- ### **Design Pattern: Presenter-Container**  
-   **Implemented the Presenter-Container design pattern** to separate UI logic from business logic, making the codebase more modular and maintainable.  
-   **Container components** handle data fetching, state management, and business logic.  
-   **Presenter components** focus on rendering UI elements.  
+
+### Game Play
+- Players guess letters to reveal the hidden word.
+- Win/Lose alerts appear when the game ends.
+
+### React Features Used
+- `useState`
+- `useEffect`
+- `useContext`
+- `useLocation`
+- `zustand`
+- `react-router-dom`
+- `navigator`
+
+### Styling
+- **Tailwind CSS** is used for a clean and responsive UI.
+
+### Data Handling
+- The single-player mode uses **hardcoded words and hints** stored in the project instead of an external API or JSON server.
+
+### Design Pattern: Presenter-Container
+Implemented the **Presenter-Container design pattern** to separate UI logic from business logic, making the codebase more modular and maintainable.
+
+- **Container Components** handle:
+  - Data handling
+  - State management
+  - Business logic
+
+- **Presenter Components** handle:
+  - Rendering UI
+  - Display logic
 
 ## Installation
+
+Clone the repository and install dependencies:
+
 
 Clone the repository and install dependencies:
 
@@ -41,12 +61,6 @@ Start the development server:
 
 ```sh
 npm run dev
-```
-
-If using the JSON server for single-player mode, start it with:
-
-```sh
-npx json-server --db.json--
 ```
 
 ## Usage
